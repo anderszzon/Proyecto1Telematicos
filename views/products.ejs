@@ -1,0 +1,89 @@
+<%- include('partials/head') %>
+
+<!--  CON PRE
+<pre>
+  <% for(var i=0; i < items.length; i++)  { %>
+    <h1><%= items[i].id %></h1>
+    <h2><%= items[i].name %></h2>
+  <% }   %>
+</pre>
+
+-->
+
+    <h2>PRODUCTOS AÑADIDOS</h2>
+
+<!--    <h1><%= 2+2 %></h1>  -->
+
+    <ul>
+      
+        <% for(var i=0; i < items.length; i++)  { %>
+
+        <% if(items[i].id == 1){ %>
+          <nav class="navbar navbar-dark bg-primary">
+            Producto # <%= items[i].id %>
+            <%= items[i].name %> 
+            <img src="static/img/1.png" width="250px" height="180px">
+          </nav>
+
+        <% } if(items[i].id == 2){ %>
+          <nav class="navbar navbar-dark bg-primary">
+            Producto # <%= items[i].id %>
+            <%= items[i].name %> 
+            <img src="static/img/2.png" width="250px" height="180px">
+          </nav>
+
+        <% } if(items[i].id == 3){ %>
+            <nav class="navbar navbar-dark bg-primary">
+              Producto # <%= items[i].id %>
+              <%= items[i].name %> 
+              <img src="static/img/3.png" width="250px" height="180px">
+        </nav>
+
+        <% } if(items[i].id == 4){ %>
+          <nav class="navbar navbar-dark bg-primary">
+            Producto # <%= items[i].id %>
+            <%= items[i].name %> 
+            <img src="static/img/4.png" width="250px" height="180px">
+      </nav>
+
+      <% } if(items[i].id == 5){ %>
+        <nav class="navbar navbar-dark bg-primary">
+          Producto # <%= items[i].id %>
+          <%= items[i].name %> 
+          <img src="static/img/5.jpg" width="250px" height="180px">
+    </nav>
+
+
+        <% } else{ %>   <% } %>
+
+
+        
+        <% }   %>
+
+    </ul>
+
+    <nav class="navbar navbar-dark bg-primary">
+    <form action="/new-product " method="POST">
+
+      <h3>AÑADIR UN NUEVO PRODUCTO</h3>
+
+      <input class="form-control mr-sm-2" placeholder="Factura De Venta" type="text" name="newItem" id="newItem" >
+      <input class="form-control mr-sm-2" placeholder="Valor" type="text" name="newItem" id="newItem" >
+      <input class="form-control mr-sm-2" placeholder="Vendedor" type="text" name="newItem" id="newItem" >
+      <input class="form-control mr-sm-2" placeholder="Impuesto" type="text" name="newItem" id="newItem" >
+      <button style="background-color: #157f09" >AÑADIR</button>
+
+    </form>
+    </nav>
+
+
+    <script>
+
+      const txtNewItem = document.getElementById('newItem');
+      txtNewItem.focus(); //SE COLOCA SOBRE EL INPUT
+
+    </script>
+
+
+
+<%- include('partials/footer') %>
